@@ -224,6 +224,50 @@ upload.title=upload.files[0].name;
 });
 
 /*=========================================
+SEVISPASS SIMULATION
+=========================================*/
+
+let verified=false;
+
+const verifyBtn=document.getElementById("verifyBtn");
+
+const status=document.getElementById("verificationStatus");
+
+const verifyDate=document.getElementById("verifyDate");
+
+if(verifyBtn){
+
+verifyBtn.addEventListener("click",()=>{
+
+verifyBtn.disabled=true;
+
+verifyBtn.innerHTML="Verifying...";
+
+setTimeout(()=>{
+
+verified=true;
+
+status.classList.remove("not-verified");
+
+status.classList.add("verified");
+
+status.innerHTML="✅ Identity Verified via SevisPass";
+
+verifyBtn.innerHTML="Verified";
+
+verifyBtn.style.background="#009245";
+
+verifyDate.value=new Date().toISOString().split("T")[0];
+
+alert("SevisPass verification successful.");
+
+},2000);
+
+});
+
+}
+
+/*=========================================
 FORM SUBMIT
 =========================================*/
 
@@ -232,6 +276,18 @@ form.addEventListener("submit",(e)=>{
 e.preventDefault();
 
 if(!validateStep(currentStep)){
+
+return;
+
+}
+
+/* ==========================
+   SEVISPASS CHECK
+========================== */
+
+if(!verified){
+
+alert("Please verify your identity using SevisPass before submitting.");
 
 return;
 
@@ -254,6 +310,8 @@ alert(
 form.reset();
 
 currentStep=0;
+
+verified=false;
 
 showStep(currentStep);
 

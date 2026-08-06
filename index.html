@@ -264,9 +264,34 @@ name="religion">
 
 <label>Home Province *</label>
 
-<input
-type="text"
-required>
+<select name="province" required>
+
+<option value="">-- Select Home Province --</option>
+
+<option>Central</option>
+<option>Chimbu (Simbu)</option>
+<option>East New Britain</option>
+<option>East Sepik</option>
+<option>Eastern Highlands</option>
+<option>Enga</option>
+<option>Gulf</option>
+<option>Hela</option>
+<option>Jiwaka</option>
+<option>Madang</option>
+<option>Manus</option>
+<option>Milne Bay</option>
+<option>Morobe</option>
+<option>National Capital District (NCD)</option>
+<option>New Ireland</option>
+<option>Oro (Northern)</option>
+<option>Bougainville Autonomous Region</option>
+<option>Sandaun (West Sepik)</option>
+<option>Southern Highlands</option>
+<option>Western Highlands</option>
+<option>Western Province</option>
+<option>West New Britain</option>
+
+</select>
 
 </div>
 
@@ -929,7 +954,46 @@ Sponsored
 
 Applicant Declaration
 
+<h3>
+
+<i class="fa-solid fa-shield-halved"></i>
+
+Applicant Verification
+
 </h3>
+
+<div class="verification-box">
+
+<i class="fa-solid fa-id-card verification-icon"></i>
+
+<h4>SevisPass Digital Identity Verification</h4>
+
+<p>
+
+Verify your identity before submitting your application.
+
+</p>
+
+<div id="verificationStatus" class="status not-verified">
+
+❌ Not Verified
+
+</div>
+
+<button
+type="button"
+id="verifyBtn"
+class="verify-btn">
+
+<i class="fa-solid fa-fingerprint"></i>
+
+Verify with SevisPass
+
+</button>
+
+</div>
+
+<br>
 
 <label class="checkbox">
 
@@ -945,17 +1009,12 @@ I certify that all information provided in this application is true and correct.
 
 <div class="input-group">
 
-<label>Applicant Signature</label>
+<label>Verification Date</label>
 
-<input type="text" required>
-
-</div>
-
-<div class="input-group">
-
-<label>Date</label>
-
-<input type="date" required>
+<input
+type="date"
+id="verifyDate"
+required>
 
 </div>
 
